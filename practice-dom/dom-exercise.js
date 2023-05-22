@@ -12,13 +12,31 @@ let data = [
 	{name:'沖縄', lat:26.2125, lng:127.68111}
 ];
 //// 注意: 以上は編集しないこと!
-
+let a = document.querySelector('h2#ex42');
+let b = document.createElement('p');
+b.textContent = "写真表と都市緯度経度のページです。";
+b.style.textEmphasis = 'sesame green';
+a.insertAdjacentElement('afterend', b);
 // 練習4-2 メッセージ追加プログラム
-<h1>DOM プログラミング演習</h1>
-<h2 id="ex42">練習4-2: 説明文の追加</h2>
-<p style="text-emphasis: sesame green;">写真表と都市の緯度経度のページです</p>
-// 練習4-3 写真表作成プログラム
+let c = document.querySelector('div#phototable');
+let d = document.createElement('img');
+d.setAttribute('src', "taro.png");
+let e = document.createElement('p');
+e.insertAdjacentElement('beforeend', d);
+c.insertAdjacentElement('beforeend', e);
 
+let f = document.createElement('img');
+f.setAttribute('src', "jiro.png");
+let g = document.createElement('p');
+g.insertAdjacentElement('beforeend', f);
+c.insertAdjacentElement('beforeend', g);
+
+let h = document.createElement('img');
+h.setAttribute('src', "hanako.png");
+let i = document.createElement('p');
+i.insertAdjacentElement('beforeend', h);
+c.insertAdjacentElement('beforeend', i);
+// 練習4-3 写真表作成プログラム
 
 // 練習4-4 箇条書き削除プログラム
 
