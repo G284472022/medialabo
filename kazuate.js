@@ -6,39 +6,44 @@ console.log('答え（デバッグ用）: ' + kotae);
 let kaisu = 0;
 
 // 予想を4回実行する
-let a = 1;
-
-let b = 0;
 // 将来以下の hantei(); の4回の呼び出しを全て削除する
 // 代わりにここでは，ボタンを押したら hantei() を呼び出すイベント処理をする
-console.log(a+'回目の予想: 4');
 hantei();
-console.log(a+'回目の予想: 4');
 hantei();
-console.log(a+'回目の予想: 4');
 hantei();
-console.log(a+'回目の予想: 4');
 hantei();
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
   let yoso = 4;
-  if(b===1){
-    cconsole.log('答えは ' + kotae + " でした。すでにゲームは終わっています。");
-  }else if(a===4){
-    console.log( '答えは '+ kotae +' でした。すでにゲームは終わっています。');
-  }else if(kotae===4){
-    console.log('正解です。 おめでとう!');
-    b = 1;
-  }else if(kotae<4){
-    console.log('まちがい。 答えはもっと小さいですよ');
-  }else if(kotae>4){
-    console.log('まちがい。 答えはもっと大きいですよ');
+  kaisu = kaisu + 1;
+  let a = document.querySelector('span#kaisu');
+  a. textContent = kaisu;
+  let b = document.querySelector('span#answer');
+  console.log(kaisu +"回目の予想："+ yoso);
+
+  let seigo = {
+  x:"正解です。おめでとう！",
+  y:"まちがい。答えはもっと大きいですよ",
+  z:"まちがい。 答えはもっと小さいですよ。",
   }
-  a = a + 1;
-  return;
+  let q = {
+    p: "答えは" + kotae + "でした。すでにゲームは終わっています。"
+  }
+  if (kaisu < 4){
+    if (kotae === yoso){
+      console.log(seigo.x);
+    }else if(kotae > yoso){
+      console.log(seigo.y);
+    }else{
+      console.log(seigo.z);
+    }
+    }else{
+      console.log(q.p);
+  }
+} 
+
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
   // 課題3-1における出力先はコンソール
-}
