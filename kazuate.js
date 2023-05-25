@@ -23,24 +23,21 @@ function hantei() {
   let b = document.querySelector('span#answer');
   console.log(kaisu +"回目の予想："+ yoso);
 
-  let seigo = {
-  x:"正解です。おめでとう！",
-  y:"まちがい。答えはもっと大きいですよ",
-  z:"まちがい。 答えはもっと小さいですよ。",
-  }
-  let q = {
-    p: "答えは" + kotae + "でした。すでにゲームは終わっています。"
-  }
   if (kaisu < 4){
     if (kotae === yoso){
-      console.log(seigo.x);
+      let w = document.querySelector('p#result');
+      w.textContent = "正解です。おめでとう!";
     }else if(kotae > yoso){
-      console.log(seigo.y);
+      let w = document.querySelector('p#result');
+      w.textContent = "まちがい、答えはもっと大きいですよ。";
     }else{
-      console.log(seigo.z);
+      let w = document.querySelector('p#result');
+      w.textContent = "まちがい、 答えはもっと小さいですよ。";
     }
+  
     }else{
-      console.log(q.p);
+      let w = document.querySelector('p#result');
+      w.textContent = "答えは" + kotae + "でした。すでにゲームは終わっています。";
   }
 } 
 
