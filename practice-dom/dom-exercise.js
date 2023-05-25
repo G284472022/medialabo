@@ -43,7 +43,10 @@ let j = document.querySelectorAll("ul#location > li");
 		k.remove();
 	}
 // 練習4-5 箇条書き追加プログラム
-let l = document.querySelector('li');
-for(let m of l){
-	console.log()
+let l = document.querySelector('ul#location');
+let m;
+for(let n of data){
+	m = document.createElement('li');
+	l.insertAdjacentElement('beforeend', m);
+	m.textContent = n.name + "... 緯度:" + n.lat + "経度:" + n.lng;
 }
