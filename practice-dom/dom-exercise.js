@@ -24,7 +24,7 @@ d.setAttribute('src', "taro.png");
 let e = document.createElement('p');
 e.insertAdjacentElement('beforeend', d);
 c.insertAdjacentElement('beforeend', e);
-
+// 練習4-3 写真表作成プログラム
 let f = document.createElement('img');
 f.setAttribute('src', "jiro.png");
 let g = document.createElement('p');
@@ -36,10 +36,14 @@ h.setAttribute('src', "hanako.png");
 let i = document.createElement('p');
 i.insertAdjacentElement('beforeend', h);
 c.insertAdjacentElement('beforeend', i);
-// 練習4-3 写真表作成プログラム
 
 // 練習4-4 箇条書き削除プログラム
-
-
+let j = document.querySelectorAll("ul#location > li");
+	for(let k of j){
+		k.remove();
+	}
 // 練習4-5 箇条書き追加プログラム
-
+let l = document.querySelector('li');
+for(let m of l){
+	console.log()
+}
