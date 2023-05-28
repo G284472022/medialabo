@@ -1,7 +1,22 @@
 body{
-    color:brown;
+
 }
 h1{
-    color:aqua;
+    color:darkblue;
+}
+h2{
+    color:green;
+}
+h3{
+    color:darkred;
+}
+p,p1,p2,p3,p4{
     font-size:large;
+    color:royalblue;
+}
+p5{
+    font-size:larger;
+}
+li{
+    font-size:larger;
 }
