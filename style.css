@@ -10,12 +10,9 @@ h2{
 h3{
     color:darkred;
 }
-p,p1,p2,p3,p4{
+p,p1,p2,p3,p4,p5,p6,p7,p8,p9{
     font-size:large;
     color:royalblue;
-}
-p5{
-    font-size:larger;
 }
 li{
     font-size:larger;
