@@ -5,7 +5,7 @@ console.log('答え（デバッグ用）: ' + kotae);
 // 入力回数（予想回数）
 let kaisu = 1;
 
-let c = document.querySelector('p')
+let c = document.querySelector('p');
 c.remove();
 
 let f = document.querySelector('#e');
