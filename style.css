@@ -1,18 +1,20 @@
-
+body{
+    background-color:rgb(20, 192, 80);
+}
 h1{
     color:darkblue;
 }
 h2{
-    color:green;
+    color:gold;
 }
 h3{
     color:darkred;
 }
-p,p1,p2,p3,p4,p5{
+p,p1,p2,p3,p4,p5,p9{
     font-size:large;
     color:royalblue;
 }
-p6,p7,p8,p9{
+p6,p7,p8{
     font-size:large;
     color:firebrick;
 }
