@@ -197,8 +197,38 @@ let data = {
       }
     ]
   }
-};
-
+}
 /////////// 課題3-2 ここからプログラムを書こう
+for(let n of data.results.shop){
+  console.log(n.name);
+  console.log(n.address);
+  console.log(n.station_name);
+  console.log(n.access);
+}
 
+let b = document.querySelector('#sendRequest');
+b.addEventListener('click', sendRequest);
+function sendRequest(){
+  let c = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G001.json';
+  axios.get(c)
+        .then(showResult)   
+        .catch(showError)   
+        .then(finish);
+}
+function showResult(resp) {
+  let data = resp.data;
+  if (typeof data === 'string') {
+      data = JSON.parse(data);
+  }
+  console.log(data);
+
+  console.log(data.x);
+}
+function showError(err) {
+  console.log(err);
+}
+
+function finish() {
+
+}
 
