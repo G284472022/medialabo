@@ -1,4 +1,4 @@
-let data = {
+let k = {
   "results": {
     "api_version": "1.26",
     "results_available": 52,
@@ -30,7 +30,7 @@ let data = {
         "english": "なし",
         "free_drink": "あり",
         "free_food": "なし",
-        "genre": {
+        "h": {
           "catch": "大人の社交場非日常を味わうダイニング",
           "code": "G001",
           "name": "居酒屋"
@@ -88,7 +88,7 @@ let data = {
           "name": "八王子"
         },
         "station_name": "京王八王子",
-        "sub_genre": {
+        "sub_h": {
           "code": "G002",
           "name": "ダイニングバー・バル"
         },
@@ -125,7 +125,7 @@ let data = {
         "english": "なし",
         "free_drink": "あり ：★NEW OPEN★当店イチ押しのコース★2.5h飲み放題付き「Funny Classicコース」4980円→2980円",
         "free_food": "あり ：★NEW OPEN★当店イチ押しのコース★2.5h飲み放題付き「Funny Classicコース」4980円→2980円",
-        "genre": {
+        "h": {
           "catch": "八王子 個室居酒屋 飲み放題 肉バル 女子会",
           "code": "G001",
           "name": "居酒屋"
@@ -183,7 +183,7 @@ let data = {
           "name": "八王子"
         },
         "station_name": "八王子",
-        "sub_genre": {
+        "sub_h": {
           "code": "G002",
           "name": "ダイニングバー・バル"
         },
@@ -199,36 +199,50 @@ let data = {
   }
 }
 /////////// 課題3-2 ここからプログラムを書こう
-for(let n of data.results.shop){
-  console.log(n.name);
-  console.log(n.address);
-  console.log(n.station_name);
-  console.log(n.access);
+for(let a of k.results.shop){
+  console.log(a.name);
 }
+let c = document.querySelector('#sendRequest');
+c.addEventListener('click', sendRequest);
 
-let b = document.querySelector('#sendRequest');
-b.addEventListener('click', sendRequest);
 function sendRequest(){
-  let c = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G001.json';
-  axios.get(c)
-        .then(showResult)   
-        .catch(showError)   
-        .then(finish);
-}
-function showResult(resp) {
-  let data = resp.data;
-  if (typeof data === 'string') {
-      data = JSON.parse(data);
+  let d = document.querySelector('select#s');
+  let e = d.selectedIndex;
+  let f = d.querySelectorAll('option');
+  let g = f.item(e);
+  console.log(g.textContent);
+  let h;
+  if(e<9){
+    h = 'G00'+(e+1);
+  }else{
+    h = 'G0'+(e+1);
   }
-  console.log(data);
-
-  console.log(data.x);
-}
-function showError(err) {
-  console.log(err);
-}
-
-function finish() {
+  let i = document.querySelector('#sendRequest');
+  let j = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/'+ h +'.json';
+  axios.get(j) 
+       .then(showResult)
+       .catch(showError)
+       .then(finish);
 
 }
-
+  function showResult(resp){
+    let k = resp.data;
+    if(typeof k === 'string'){
+      k = JSON.parse(k);
+    }
+    let m = document.querySelector('button#sendRequest');
+    let n = document.querySelector('div#u');
+    let l; 
+    m.insertAdjacentElement('afterend', n);
+    for(let i of k.results.shop){
+      l = document.createElement('p');
+      n.insertAdjacentElement('beforeend', l);
+      l.textContent=(i.name); 
+    }
+  }
+  function showError(err){
+    console.log(err);
+  }
+  function finish(){
+    console.log('通信が終わりました');
+  }

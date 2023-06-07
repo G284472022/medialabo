@@ -1,13 +1,35 @@
 <head>
 <title>グルメ情報について</title>
-<script src="https://www.nishita-lab.org/web-contents/jsons/hotpepper/G001.json">
-</script>
-<script src="gourmet.js" defer></script>
-<link rel="stylesheet" href="style1.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+<script src='gourmet.js' defer></script>
+<link rel='stylesheet' href='style1.css'>
 </head>
+<body>
+    <div style="text-align: center">
 <h1>グルメ情報について</h1>
-<label for="a"></label>
-<input type="text" name="a" placeholder="入力" id="a" size="30">
+<div id="t">
+<label for="a">選択</label>
+<select name="s" id="s">
+    <option value="b">居酒屋</option>
+    <option value="c">ダイニングバー・バル</option>
+    <option value="d">創作料理</option>
+    <option value="e">和食</option>
+    <option value="f">洋食</option>
+    <option value="g">イタリアン・フレンチ</option>
+    <option value="h">中華</option>
+    <option value="i">焼肉・ホルモン</option>
+    <option value="j">アジア・エスニック料理</option>
+    <option value="k">各国料理</option>
+    <option value="l">カラオケ・パーティ</option>
+    <option value="m">バー・カクテル</option>
+    <option value="n">ラーメン</option>
+    <option value="o">カフェ・スイーツ</option>
+    <option value="p">その他グルメ</option>
+    <option value="q">お好み焼き・もんじゃ</option>
+    <option value="r">韓国料理</option>
+</select>
 <button id="sendRequest">検索</button>
-
-<h2></h2>
+</div>
+<div id="u"></div>
+</div>
+</body>
